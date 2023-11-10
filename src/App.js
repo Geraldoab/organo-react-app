@@ -51,6 +51,10 @@ function App() {
     console.log(employeeList)
   }
 
+  const deleteEmployee = (id) => {
+    setEmployee(employeeList.filter(employee => employee.id !== id))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -63,6 +67,7 @@ function App() {
           name={team.name} 
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
+          onDeleteEmployee={deleteEmployee}
           employeeList={employeeList.filter(employee => employee.team === team.name)}  />)}
     </div>
   );

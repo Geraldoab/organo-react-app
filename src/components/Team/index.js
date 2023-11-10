@@ -9,10 +9,12 @@ const Team = (props) => {
         <section className='team' style={css}>
             <h3 style={{borderColor: props.primaryColor}}>{props.name}</h3>
             <div className='employees'>
-                {props.employeeList.map(employee => 
+                {props.employeeList.map((employee, index) => 
                     <Employee
+                        onDeleteEmployee={props.onDeleteEmployee}
                         backgroundColor={props.primaryColor}
-                        key={employee.name} 
+                        key={employee.id}
+                        id={employee.id}  
                         name={employee.name} 
                         role={employee.role} 
                         photo={employee.photo} />

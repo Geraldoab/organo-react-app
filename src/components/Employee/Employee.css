@@ -1,5 +1,6 @@
 .employee {
     width: 280px;
+    position: relative;
 }
 
 .employee .header {
@@ -34,4 +35,10 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+}
+
+.delete {
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }

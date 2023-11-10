@@ -3,6 +3,7 @@ import SelectField from '../SelectField'
 import TextField from '../TextField'
 import './Form.css'
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = (props) => {
 
@@ -14,6 +15,7 @@ const Form = (props) => {
     const onSave = (event) => {
         event.preventDefault()
         props.onCreated({
+            id: uuidv4(),
             name,
             role,
             photo,
