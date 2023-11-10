@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin: 80px 0;
+    gap: 16px;
 }
 
 .form form {
@@ -10,4 +11,10 @@
     border-radius: 20px;
     padding: 36px 64px;
     box-shadow: 8px 8px 16px rgb(0, 0, 0, 0.08);
+}
+
+.team-color {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
 }
