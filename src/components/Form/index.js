@@ -4,7 +4,6 @@ import TextField from '../TextField'
 import './Form.css'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { MaterialPicker  } from 'react-color'
 import Snackbar from '@mui/material/Snackbar'; 
 import Alert from '@mui/material/Alert'; 
 
@@ -117,13 +116,21 @@ const Form = (props) => {
                      label="Team name" 
                      placeholder="Type the team name" />
 
-                <label className='team-color'>Primary color</label>
-                <MaterialPicker color={teamPrimaryColor} onChange={value => setTeamPrimaryColor(value.hex)} />
-                <br />  
+                <TextField
+                     autoComplete='off'
+                     value={teamPrimaryColor}
+                     onType={value => setTeamPrimaryColor(value)}   
+                     required={true}
+                     type='color' 
+                     label='Primary color' />
 
-                <label className='team-color'>Secondary color</label>
-                <MaterialPicker color={teamSecondaryColor} onChange={value => setTeamSecondaryColor(value.hex)} />
-                <br />   
+                <TextField
+                     autoComplete='off'
+                     value={teamSecondaryColor}
+                     onType={value => setTeamSecondaryColor(value)}   
+                     required={true}
+                     type='color' 
+                     label='Secondary color' />          
 
                 <ButtonField>Add</ButtonField>
             </form>

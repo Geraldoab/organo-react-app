@@ -80,7 +80,7 @@ function App() {
 
   const [showSnackbar, setShowSnackbar] = useState(false); 
   const [snackBarMessage, setSnackBarMessage] = useState(false); 
-  const [snackBarType, setSnackBarType] = useState(false); 
+  const [snackBarType, setSnackBarType] = useState('success'); 
   
   const onOpenSnackbarClickHandler = (message, type) => { 
       setShowSnackbar(true); 

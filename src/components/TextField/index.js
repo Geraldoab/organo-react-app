@@ -1,15 +1,24 @@
 import './TextField.css'
 
-const TextField = (props) => {
+const TextField = ({label, autoComplete, value, required, type = 'text', placeholder, maxLength = 120, onType}) => {
 
     const onChange = (event) => {
-        props.onType(event.target.value)
+        onType(event.target.value)
     }
 
     return (
-        <div className="text-field">
-            <label htmlFor={props.label}>{props.label}</label>
-            <input autoComplete={props.autoComplete} id={props.label}  value={props.value} onChange={onChange} required={props.required} type="text" placeholder={props.placeholder} />
+        <div className={`text-field type-${type}`}>
+            <label htmlFor={label}>{label}</label>
+            <input 
+                autoComplete={autoComplete} 
+                id={label} 
+                value={value} 
+                onChange={onChange} 
+                maxLength={maxLength} 
+                required={required} 
+                type={type} 
+                placeholder={placeholder} 
+            />
         </div>
     )
 }

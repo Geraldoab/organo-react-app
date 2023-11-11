@@ -17,3 +17,8 @@
     padding: 24px;
     box-sizing: border-box;
 }
+
+.text-field input[type=color] {
+    padding: 4px;
+    height: 60px;
+}
