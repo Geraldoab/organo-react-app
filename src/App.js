@@ -78,6 +78,15 @@ function App() {
     setEmployee(employeeList.filter(employee => employee.id !== id))
   }
 
+  const onClickFavorite = (id) => {
+    setEmployee(employeeList.map(employee => {
+      if(employee.id === id) {
+        employee.isFavorite = !employee.isFavorite
+      }
+      return employee
+    }))
+  }
+
   const [showSnackbar, setShowSnackbar] = useState(false); 
   const [snackBarMessage, setSnackBarMessage] = useState(false); 
   const [snackBarType, setSnackBarType] = useState('success'); 
@@ -119,6 +128,7 @@ function App() {
           name={team.name} 
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
+          onClickFavorite={onClickFavorite}
           onDeleteEmployee={deleteEmployee}
           employeeList={employeeList.filter(employee => employee.team === team.name)}  />)}
     </div>

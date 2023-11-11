@@ -24,7 +24,8 @@ const Form = (props) => {
             name,
             role,
             photo,
-            team
+            team,
+            isFavorite: false
         })
 
         setName('')

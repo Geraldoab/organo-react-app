@@ -11,10 +11,12 @@ const Team = (props) => {
             <div className='employees'>
                 {props.employeeList.map((employee, index) => 
                     <Employee
+                        onClickFavorite={props.onClickFavorite}
                         onDeleteEmployee={props.onDeleteEmployee}
                         backgroundColor={props.primaryColor}
                         key={employee.id}
-                        id={employee.id}  
+                        id={employee.id}
+                        isFavorite={employee.isFavorite}  
                         name={employee.name} 
                         role={employee.role} 
                         photo={employee.photo} />
